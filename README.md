@@ -10,8 +10,8 @@ Welcome to Spotify Android SDK! This project is for people who wish to develop
 Android applications containing Spotify-related functionality, such as audio
 streaming, playlist manipulation, searching and more.
 
-Usage of this SDK is bound under the [Libspotify Terms of
-Use](https://developer.spotify.com/technologies/libspotify/terms-of-use-us/).
+Usage of this SDK is bound under the [Developer Terms of
+Use](https://developer.spotify.com/developer-terms-of-use/).
 
 
 Beta Release Information
