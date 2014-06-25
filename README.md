@@ -43,7 +43,7 @@ Getting Started
 ===============
 
 Please see the [beginner's
-tutorial](https://developer.spotify.com/technologies/spotify-ios-sdk/tutorial/)
+tutorial](https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/)
 on the Spotify Developer Website.
 
 
