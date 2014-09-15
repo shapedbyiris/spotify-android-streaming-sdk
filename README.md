@@ -31,14 +31,6 @@ file.
 not be shipped to end users. It *will* stop working in the future.
 
 
-Source Code
-===========
-
-Yes, the source code for this project is coming very soon! Although the first
-beta releases will only be binaries, a full source release will follow within
-a matter of weeks.
-
-
 Getting Started
 ===============
 
