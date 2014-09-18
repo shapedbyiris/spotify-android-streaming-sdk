@@ -1,16 +1,16 @@
-**WARNING: This is a beta release of the Spotify Android SDK, and can stop
-working at any time. This SDK release is not suitable for publicly released
-applications.**
-
+**IMPORTANT! The Spotify Android SDK is currently a beta release; its content
+and functionality are likely to change significantly and without warning. The
+Android SDK is made available to you for private, non-commercial use only:
+please do not use it to create applications for public distribution.**
 
 Spotify Android SDK
 ===================
 
 Welcome to Spotify Android SDK! This project is for people who wish to develop
 Android applications containing Spotify-related functionality, such as audio
-streaming, playlist manipulation, searching and more.
+streaming, playlist management, metadata searches, and more.
 
-Usage of this SDK is bound under the [Developer Terms of
+Note that by using this SDK, you accept our [Developer Terms of
 Use](https://developer.spotify.com/developer-terms-of-use/).
 
 
@@ -27,7 +27,7 @@ For known issues and release notes, see the
 [CHANGELOG.md](https://github.com/spotify/android-sdk/blob/master/CHANGELOG.md)
 file.
 
-**IMPORTANT:** This SDK is pre-release software and is not supported, and must
+**IMPORTANT!** This SDK is pre-release software and is not supported and must
 not be shipped to end users. It *will* stop working in the future.
 
 
