@@ -1,3 +1,28 @@
+Version 1.0.0-beta4
+===================
+
+**What's New:**
+
+* You will now get player state with every player event.
+* The player state now contains information about currently playing track
+  and its duration. ([Issue #22](https://github.com/spotify/android-sdk/issues/22))
+* Instead of keeping a copy of player state from native player inside Player object
+  `getPlayerState()` is now asynchronous and requires a callback.
+* We removed these methods from the Player object:
+  * `isPlaying()`
+  * `getPlaybackPosition()`
+  * `isShuffling()`
+  * `isRepeating()`
+
+  This data can now be retrieved asynchronously with `getPlayerState()` or from
+  the player state passed with player events.
+* New callback for errors while logging in.
+* Player initialization callback is now triggered after user successfully logs in.
+
+**Bugs fixed:**
+
+* SDK does not mix playback with Spotify App. ([Issue #28](https://github.com/spotify/android-sdk/issues/28))
+
 Version 1.0.0-beta3
 ===================
 
