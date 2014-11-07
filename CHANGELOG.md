@@ -1,3 +1,27 @@
+Version 1.0.0-beta5
+===================
+
+**What's New:**
+
+* We introduced two new playback events: `TRACK_START` and `TRACK_END` which
+  replace the `TRACK_CHANGED` event.
+  The uri of the track that started or finished playing can be read from
+  player state sent with those events. ([Issue #8](https://github.com/spotify/android-sdk/issues/8))
+* SDK now handles playback errors with new `PlayerNotificationCallback#onPlaybackError` method 
+  which can be used to handle the unavailable tracks errors. ([Issue #37](https://github.com/spotify/android-sdk/issues/37))
+* As an experimental feature you can now use disk cache in your app. It will store streamed
+  tracks locally on the device and read them from disk when played next time.
+  To enable disk cache, initialize Spotify as follows:
+
+  ```
+  Spotify spotify = new Spotify("myauthtoken");
+  spotify.useCache(true);
+  ```
+
+**Bugs fixed:**
+
+* `InitializationObserver#onError` callback is now delivered correctly on the UI thread.
+
 Version 1.0.0-beta4
 ===================
 
