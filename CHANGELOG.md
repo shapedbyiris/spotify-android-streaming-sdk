@@ -18,7 +18,7 @@ Version 1.0.0-beta6
   Player player = spotify.getPlayer(context, "mycompany", referenceObj, initObserver);
 
   // New way
-  Spotify spotify = new Spotify("myauthtoken");
+  Spotify spotify = new Spotify();
   Config playerConfig = new Config(context, "myauthtoken", "myclientid");
   Player player = spotify.getPlayer(playerConfig, referenceObj, initObserver);
   ```
