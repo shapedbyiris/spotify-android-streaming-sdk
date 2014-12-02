@@ -1,3 +1,44 @@
+Version 1.0.0-beta6
+===================
+
+**What's New:**
+
+* Starting a song from specified position is now possible.
+  Check out the new `PlayConfig` class and `Player#play(PlayConfig)` method to see how to use it.
+* We added some more error handling. This means you can get new types of errors
+  in `PlayerNotificationCallback#onPlaybackError` if something goes wrong.
+* Disk cache is now turned on by default. It can be turned off by invoking `Config#useCache`
+  with `false`.
+* Initialization of the player changed slightly. Now you'll need to pass a `Config` object
+  with valid client ID when getting the player:
+
+  ```java
+  // Old way:
+  Spotify spotify = new Spotify("myauthtoken");
+  Player player = spotify.getPlayer(context, "mycompany", referenceObj, initObserver);
+
+  // New way
+  Spotify spotify = new Spotify("myauthtoken");
+  Config playerConfig = new Config(context, "myauthtoken", "myclientid");
+  Player player = spotify.getPlayer(playerConfig, referenceObj, initObserver);
+  ```
+
+* It is possible to inject a custom player to the `Spotify` class with `Spotify#setPlayer` method.
+
+**Bug fixes**
+
+* We tweaked playback logic a bit. Now the player should much more responsive
+  when skipping songs or changing contexts.
+* SDK is now tested with Lollipop (Android 5.0)
+
+**Known issues**
+
+* If you try playing a playlist from an index beyond the playlist size, there's no related
+  playback error triggered.
+* The same issue occurs when trying to play a song with the initial position that is
+  beyond its duration.
+
+
 Version 1.0.0-beta5
 ===================
 
