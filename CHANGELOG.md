@@ -1,3 +1,29 @@
+Version 1.0.0-beta7
+==================
+
+**What's New**
+
+* SDK includes native libraries for ARMv7 devices
+* New way to get access to audio data. Instead of subclassing the `Player`
+  it is now possible to create a custom `AudioController` and pass it to the
+  player during creation. For details refer to `AudioController` class
+* Subclassing the `Player` is no longer possible. This is because there's no need for it
+  with custom `AudioController`s.
+* Initialized `Player` instance is passed to the `Player.InitializationObserver#onInitalized` callback.
+* It is possible to set playback bitrate. Default bitrate is set to 160kbit/s.
+  For more details see `Player#setPlaybackBitrate` method and `PlaybackBitrate` object.
+* Player has two new methods: `login` and `logout` which can be used to log back in
+  after losing connectivity or to switch users.
+* It is now possible to specify which handler player should post its callback on (default is
+  main thread)
+* One of the `ConnectionStateCallback` methods has been removed.
+* To use all brand new options Player has a brand new Builder.
+
+**Bug fixes**
+
+* Only playback events are delivered to `PlayerNotificationCallback#OnPlaybackEvent`
+* Lots of internal Player fixes mostly related to concurrency.
+
 Version 1.0.0-beta6
 ===================
 
