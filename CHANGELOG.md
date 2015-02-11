@@ -1,3 +1,18 @@
+Version 1.0.0-beta8
+===================
+
+**What's new**
+
+* Login flow in the WebView. It is no longer necessary to open the web browser
+  to log users in. See `AuthenticationClient#openLoginActivity` for details.
+* `PlayerState` now implements `Parcelable`.
+* `Spotify#getPlayer` method is static.
+
+**Known bugs**
+
+* Using queue methods together with regular playback might behave unreliably
+
+
 Version 1.0.0-beta7
 ==================
 
