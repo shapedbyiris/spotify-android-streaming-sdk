@@ -29,9 +29,63 @@ file.
 Getting Started
 ===============
 
-Please see the [beginner's
-tutorial](https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/)
-on the Spotify Developer Website.
+1. Download the latest [Spotify Android SDK](https://github.com/spotify/android-sdk/releases).
+2. Have a look at the [beginner's tutorial](https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/)
+   on the Spotify Developer Website.
+
+
+SDK's structure
+===============
+
+Spotify Android SDK consists of two libraries.
+One of them handles authentication flow and the other one manages audio playback.
+The libraries work well together but can also be used separately, for example if
+the application doesn't need to play music it can use just Spotify Authentication module by itself.
+
+Spotify Authentication
+----------------------
+
+This module is responsible for authenticating the user and fetching the access token
+that can subsequently be used to play music or send requests to the Spotify Web API.
+
+To add this library to your project copy the `spotify-auth-{version}.aar` file from the
+[SDK archive](https://github.com/spotify/android-sdk/releases) to the `libs`
+folder in your app project and add the reference to its `build.gradle` file.
+For version `1.0.0-beta9` it would be:
+
+```
+compile 'com.spotify.sdk:spotify-auth:1.0.0-beta9@aar'
+```
+
+To learn more about working with authentication see the
+[Authentication Guide](https://developer.spotify.com/technologies/spotify-android-sdk/android-sdk-authentication-guide/)
+and the [API reference](https://developer.spotify.com/android-sdk-docs/authentication) on the developer site.
+
+Spotify Player
+--------------
+
+The player module will play music from Spotify after the user logs in with the access token.
+**Only Premium Spotify users will be able to log in and play music with this library.**.
+
+To add this library to your project copy the `spotify-player-{version}.aar` file from the
+[SDK archive](https://github.com/spotify/android-sdk/releases) to the `libs`
+folder in your app project and add the reference to its `build.gradle` file.
+For version `1.0.0-beta9` it would be:
+
+```
+compile 'com.spotify.sdk:spotify-player:1.0.0-beta9@aar'
+```
+
+To learn more about working with the player see the
+[Beginner's Tutorial](https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/)
+and the [API reference](https://developer.spotify.com/android-sdk-docs/player) on the developer site.
+
+Spotify Web API
+---------------
+
+The Web API wrapper is currently not a part of the SDK project but there are
+a few open source [Web API libraries](https://developer.spotify.com/web-api/code-examples/#libraries)
+available for Android.
 
 
 Authenticating and Scopes

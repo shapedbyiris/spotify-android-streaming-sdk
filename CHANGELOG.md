@@ -1,3 +1,41 @@
+Version 1.0.0-beta9
+===================
+
+**What's new**
+
+* Spotify Android SDK is now shipped as two separate libraries -
+  one that handles authentication `spotify-auth-1.0.0-beta9.aar` and one
+  containing the player `spotify-player-1.0.0-beta9.aar`. 
+  Applications that do not use playback can now include just the authentication module.
+  To use the new libraries a change in build files is required:
+  ```java
+  // Before 1.0.0-beta9
+  compile 'com.spotify.sdk:spotifysdk:1.0.0-beta9@aar'
+
+  // From 1.0.0-beta9
+  compile 'com.spotify.sdk:spotify-player:1.0.0-beta9@aar'
+  compile 'com.spotify.sdk:spotify-auth:1.0.0-beta9@aar'
+  ```
+  The name of the package containing playback related classes was changed
+  from `com.spotify.sdk.android.playback` to `com.spotify.sdk.android.player`.
+  More details can be found on the [Spotify Android SDK page](https://developer.spotify.com/technologies/spotify-android-sdk/).
+* We finally have x86 support! ([Issue #35](https://github.com/spotify/android-sdk/issues/35))
+* `AuthenticationClient#createLoginActivityIntent` method was added.
+  This method returns an intent that can be used to show the `LoginActivity` from a Fragment.
+  This intent can be used both with `android.app` and `android.support` Fragments. ([Issue #73](https://github.com/spotify/android-sdk/issues/73))
+* Additional checks were introduced to ensure that `null` callbacks can't be added to the `Player`.
+
+**Bug fixes**
+
+* Better error handling when `LoginActivity` is launched without a calling activity.
+  In such case a descriptive error message will be logged in the logcat. ([Issue #80](https://github.com/spotify/android-sdk/issues/80))
+* `BadTokenException` in LoginDialog fixed ([Issue #95](https://github.com/spotify/android-sdk/issues/95))
+
+**Known bugs**
+
+* Unavailable track error currently reports wrong uri.
+
+
 Version 1.0.0-beta8
 ===================
 
