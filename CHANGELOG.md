@@ -1,3 +1,19 @@
+Version 1.0.0-beta10
+====================
+
+**What's new**
+
+* `TRACK_CHANGED` event is back. `TRACK_START` and `TRACK_END` are deprecated now.
+
+**Bug fixes**
+
+* CPU usage is much lower and much more battery friendly now ([Issue #98](https://github.com/spotify/android-sdk/issues/98))
+* Player won't incorrectly report initialized state if it has been shut down.
+* `InitializationObserver` will call back with `onError` if Player had been shutdown before it finished initializing. ([Issue #97](https://github.com/spotify/android-sdk/issues/97))
+* Potentially infinite loop in the Player initialization has been fixed.
+* Internal buffer size has been increased to better accommodate for unstable network connections. ([Issue #98](https://github.com/spotify/android-sdk/issues/102))
+
+
 Version 1.0.0-beta9
 ===================
 
