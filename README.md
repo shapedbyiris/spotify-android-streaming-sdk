@@ -51,10 +51,10 @@ that can subsequently be used to play music or be used in requests to the Spotif
 To add this library to your project copy the `spotify-auth-{version}.aar` file from the
 [SDK archive](https://github.com/spotify/android-sdk/releases) to the `libs`
 folder in your app project and add the reference to its `build.gradle` file.
-For version `1.0.0-beta10` it would be:
+For version `1.0.0-beta11` it would be:
 
 ```
-compile 'com.spotify.sdk:spotify-auth:1.0.0-beta10@aar'
+compile 'com.spotify.sdk:spotify-auth:1.0.0-beta11@aar'
 ```
 
 To learn more about working with authentication see the

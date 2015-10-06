@@ -1,3 +1,15 @@
+Version 1.0.0-beta11
+====================
+
+**Bug fixes**
+
+* Native crash in the player was fixed ([Issue #96](https://github.com/spotify/android-sdk/issues/96))
+* Tracklist with size 1 can now be played using `PlayConfig.withTrackIndex(0)` ([Issue #119](https://github.com/spotify/android-sdk/issues/119))
+* Player initialization issues for certain phone models are fixed ([Issue #139](https://github.com/spotify/android-sdk/issues/139))
+* LoginActivity stays open when fetching authentication code for 2-step Facebook authentication ([Issue #145](https://github.com/spotify/android-sdk/issues/145))
+* `allowBackup=true` was removed from libraries' manifests ([Issue #153](https://github.com/spotify/android-sdk/issues/153))
+
+
 Version 1.0.0-beta10
 ====================
 
