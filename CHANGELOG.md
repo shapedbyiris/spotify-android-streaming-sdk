@@ -1,3 +1,18 @@
+Version 1.0.0-beta12
+====================
+
+**What's new**
+
+* This SDK now uses Spotify Android app to obtain access tokens. For more information see the
+[Auth Guide](https://developer.spotify.com/technologies/spotify-android-sdk/android-sdk-authentication-guide/)
+* Target SDK version is now 23 (Marshmallow)
+
+**Bug fixes**
+
+* Fix a crash when no auth request present when invoking `LoginActivity` ([Issue #164](https://github.com/spotify/android-sdk/issues/164))
+* Fix a crash when `AudioTrack` doesn't initialize properly ([Issue #160](https://github.com/spotify/android-sdk/issues/160))
+
+
 Version 1.0.0-beta11
 ====================
 
