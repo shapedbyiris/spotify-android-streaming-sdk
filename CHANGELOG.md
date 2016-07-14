@@ -1,3 +1,15 @@
+Version 1.0.0-beta13
+====================
+
+**What's new**
+
+* Remove support for armV5 reducing the library size to 1mb
+
+**Bug fixes**
+
+* Fix a java.lang.ClassNotFoundException authentication error on Samsung devices ([Issue #217](https://github.com/spotify/android-sdk/issues/217))
+* Fix a crash caused by cache ([Issue #224](https://github.com/spotify/android-sdk/issues/224))
+
 Version 1.0.0-beta12
 ====================
 
