@@ -1,3 +1,18 @@
+Version beta21-noconnect-2.18c
+====================
+
+**What's new**
+
+* IPv6 network support
+* `Player` renamed to `SpotifyPlayer`
+* `spotifyPlayer.play(uri)` is changed to `spotifyPlayer.play(uri, index_in_context, start_from_ms)`
+* `spotifyPlayer.play(uri, index_in_context, start_from_ms)` supports URIs for tracks, albums, playlists
+* Error and PlayerEvent classes added with description
+* `Metadata` class added to expose the information about current, next, previous tracks
+* To obtain `Metadata` instance call `spotifyPlayer.getMetadata()`
+* `PlaybackState` class added, get it using `spotifyPlayer.getPlaybackState()`
+
+
 Version 1.0.0-beta13
 ====================
 
