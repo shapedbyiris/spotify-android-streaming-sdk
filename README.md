@@ -29,9 +29,8 @@ file.
 Getting Started
 ===============
 
-1. Download the latest [Spotify Android SDK](https://github.com/spotify/android-sdk/releases).
-2. Have a look at the [beginner's tutorial](https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/)
-   on the Spotify Developer Website.
+1. Checkout [Spotify Android SDK](https://github.com/spotify/android-sdk) master branch.
+2. Have a look at the [example](examples/DemoActivity.java)
 
 
 The SDK's structure
@@ -48,13 +47,13 @@ Spotify Authentication Library
 This library is responsible for authenticating the user and fetching the access token
 that can subsequently be used to play music or be used in requests to the Spotify Web API.
 
-To add this library to your project copy the `spotify-auth-{version}.aar` file from the
-[SDK archive](https://github.com/spotify/android-sdk/releases) to the `libs`
+To add this library to your project copy the `spotify-auth-*.aar` file from the
+[Android SDK repo](https://github.com/spotify/android-sdk) to the `libs`
 folder in your app project and add the reference to its `build.gradle` file.
-For version `1.0.0-beta13` it would be:
+For version `beta21-noconnect-2.18c` it would be:
 
 ```
-compile 'com.spotify.sdk:spotify-auth:1.0.0-beta13@aar'
+compile 'com.spotify.sdk:spotify-auth-beta21-noconnect-2.18c@aar'
 ```
 
 To learn more about working with authentication see the
@@ -67,13 +66,13 @@ Spotify Player Library
 This library can play music from Spotify after the user logs in with the access token.
 **Only Premium Spotify users will be able to log in and play music with this library.**.
 
-To add this library to your project copy the `spotify-player-{version}.aar` file from the
-[SDK archive](https://github.com/spotify/android-sdk/releases) to the `libs`
+To add this library to your project copy the `spotify-player-*.aar` file from the
+[Android SDK](https://github.com/spotify/android-sdk) to the `libs`
 folder in your app project and add the reference to its `build.gradle` file.
-For version `1.0.0-beta13` it would be:
+For version `beta21-noconnect-2.18c` it would be:
 
 ```
-compile 'com.spotify.sdk:spotify-player:1.0.0-beta13@aar'
+compile 'com.spotify.sdk:spotify-player-beta21-noconnect-2.18c@aar'
 ```
 
 To learn more about working with the player see the
