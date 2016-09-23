@@ -11,6 +11,8 @@ user authentication and authorization.
 Note that by using this SDK, you accept our [Developer Terms of
 Use](https://developer.spotify.com/developer-terms-of-use/).
 
+#### Bugs or feature requests
+[Open bug tickets](https://github.com/spotify/android-sdk/labels/bug) | [Open feature requests](https://github.com/spotify/android-sdk/labels/enhancement) | [All](https://github.com/spotify/android-sdk/issues) 
 
 Beta Release Information
 ========================
