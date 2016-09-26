@@ -24,6 +24,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -32,6 +34,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +54,8 @@ import com.spotify.sdk.android.player.PlayerEvent;
 import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 import com.spotify.sdk.embedded.demo.R;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 public class DemoActivity extends Activity implements
         Player.NotificationCallback, ConnectionStateCallback {
@@ -137,7 +142,7 @@ public class DemoActivity extends Activity implements
     /**
      * Used to get notifications from the system about the current network state in order
      * to pass them along to
-     * {@link SpotifyPlayer#setConnectivityStatus(com.spotify.sdk.android.player.Connectivity)}.
+     * {@link SpotifyPlayer#setConnectivityStatus(Player.OperationCallback, Connectivity)}
      * Note that this implies <pre>android.permission.ACCESS_NETWORK_STATE</pre> must be
      * declared in the manifest. Not setting the correct network state in the SDK may
      * result in strange behavior.
@@ -158,6 +163,18 @@ public class DemoActivity extends Activity implements
      */
     private ScrollView mStatusTextScrollView;
     private Metadata mMetadata;
+
+    private final Player.OperationCallback mOperationCallback = new Player.OperationCallback() {
+        @Override
+        public void onSuccess() {
+            logStatus("OK!");
+        }
+
+        @Override
+        public void onError(Error error) {
+            logStatus("ERROR:" + error);
+        }
+    };
 
     //  ___       _ _   _       _ _          _   _
     // |_ _|_ __ (_) |_(_) __ _| (_)______ _| |_(_) ___  _ __
@@ -193,7 +210,7 @@ public class DemoActivity extends Activity implements
                 if (mPlayer != null) {
                     Connectivity connectivity = getNetworkConnectivity(getBaseContext());
                     logStatus("Network state changed: " + connectivity.toString());
-                    mPlayer.setConnectivityStatus(connectivity);
+                    mPlayer.setConnectivityStatus(mOperationCallback, connectivity);
                 }
             }
         };
@@ -213,9 +230,7 @@ public class DemoActivity extends Activity implements
      *
      * @param context Android context
      * @return Connectivity state to be passed to the SDK
-     * @see SpotifyPlayer#setConnectivityStatus(com.spotify.sdk.android.player.Connectivity)
      */
-    //TODO(nik): ^-- is that actually true? I think so, but someone ought to look it up...
     private Connectivity getNetworkConnectivity(Context context) {
         ConnectivityManager connectivityManager;
         connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -281,7 +296,7 @@ public class DemoActivity extends Activity implements
                 @Override
                 public void onInitialized(SpotifyPlayer player) {
                     logStatus("-- Player initialized --");
-                    mPlayer.setConnectivityStatus(getNetworkConnectivity(DemoActivity.this));
+                    mPlayer.setConnectivityStatus(mOperationCallback, getNetworkConnectivity(DemoActivity.this));
                     mPlayer.addNotificationCallback(DemoActivity.this);
                     mPlayer.addConnectionStateCallback(DemoActivity.this);
                     // Trigger UI refresh
@@ -328,12 +343,36 @@ public class DemoActivity extends Activity implements
             findViewById(R.id.skip_prev_button).setEnabled(mMetadata.prevTrack != null);
             findViewById(R.id.pause_button).setEnabled(mMetadata.currentTrack != null);
         }
+
+        final ImageView coverArtView = (ImageView) findViewById(R.id.cover_art);
         if (mMetadata != null && mMetadata.currentTrack != null) {
             final String durationStr = String.format(" (%dms)", mMetadata.currentTrack.durationMs);
-            mMetadataText.setText(mMetadata.currentTrack.name + " - " + mMetadata.currentTrack.artistName + durationStr);
+            mMetadataText.setText(mMetadata.contextName + "\n" + mMetadata.currentTrack.name + " - " + mMetadata.currentTrack.artistName + durationStr);
+
+            Picasso.with(this)
+                    .load(mMetadata.currentTrack.albumCoverWebUrl)
+                    .transform(new Transformation() {
+                        @Override
+                        public Bitmap transform(Bitmap source) {
+                            // really ugly darkening trick
+                            final Bitmap copy = source.copy(source.getConfig(), true);
+                            source.recycle();
+                            final Canvas canvas = new Canvas(copy);
+                            canvas.drawColor(0xbb000000);
+                            return copy;
+                        }
+
+                        @Override
+                        public String key() {
+                            return "darken";
+                        }
+                    })
+                    .into(coverArtView);
         } else {
-            mMetadataText.setText("<nothing playing>");
+            mMetadataText.setText("<nothing is playing>");
+            coverArtView.setBackground(null);
         }
+
     }
 
     private boolean isLoggedIn() {
@@ -373,54 +412,54 @@ public class DemoActivity extends Activity implements
         }
 
         logStatus("Starting playback for " + uri);
-        mPlayer.play(uri, 0, 0);
+        mPlayer.playUri(mOperationCallback, uri, 0, 0);
     }
 
     public void onPauseButtonClicked(View view) {
         if (mCurrentPlaybackState != null && mCurrentPlaybackState.isPlaying) {
-            mPlayer.pause();
+            mPlayer.pause(mOperationCallback);
         } else {
-            mPlayer.resume();
+            mPlayer.resume(mOperationCallback);
         }
     }
 
     public void onSkipToPreviousButtonClicked(View view) {
-        mPlayer.skipToPrevious();
+        mPlayer.skipToPrevious(mOperationCallback);
     }
 
     public void onSkipToNextButtonClicked(View view) {
-        mPlayer.skipToNext();
+        mPlayer.skipToNext(mOperationCallback);
     }
 
     public void onQueueSongButtonClicked(View view) {
-        mPlayer.queue(TEST_QUEUE_SONG_URI);
+        mPlayer.queue(mOperationCallback, TEST_QUEUE_SONG_URI);
         Toast toast = Toast.makeText(this, R.string.song_queued_toast, Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void onToggleShuffleButtonClicked(View view) {
-        mPlayer.setShuffle(!mCurrentPlaybackState.isShuffling);
+        mPlayer.setShuffle(mOperationCallback, !mCurrentPlaybackState.isShuffling);
     }
 
     public void onToggleRepeatButtonClicked(View view) {
-        mPlayer.setRepeat(!mCurrentPlaybackState.isRepeating);
+        mPlayer.setRepeat(mOperationCallback, !mCurrentPlaybackState.isRepeating);
     }
 
     public void onSeekButtonClicked(View view) {
         final Integer seek = Integer.valueOf(mSeekEditText.getText().toString());
-        mPlayer.seekToPosition(seek);
+        mPlayer.seekToPosition(mOperationCallback, seek);
     }
 
     public void onLowBitrateButtonPressed(View view) {
-        mPlayer.setPlaybackBitrate(PlaybackBitrate.BITRATE_LOW);
+        mPlayer.setPlaybackBitrate(mOperationCallback, PlaybackBitrate.BITRATE_LOW);
     }
 
     public void onNormalBitrateButtonPressed(View view) {
-        mPlayer.setPlaybackBitrate(PlaybackBitrate.BITRATE_NORMAL);
+        mPlayer.setPlaybackBitrate(mOperationCallback, PlaybackBitrate.BITRATE_NORMAL);
     }
 
     public void onHighBitrateButtonPressed(View view) {
-        mPlayer.setPlaybackBitrate(PlaybackBitrate.BITRATE_HIGH);
+        mPlayer.setPlaybackBitrate(mOperationCallback, PlaybackBitrate.BITRATE_HIGH);
     }
 
     //   ____      _ _ _                _      __  __      _   _               _
