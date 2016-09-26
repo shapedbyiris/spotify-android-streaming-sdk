@@ -11,8 +11,10 @@ user authentication and authorization.
 Note that by using this SDK, you accept our [Developer Terms of
 Use](https://developer.spotify.com/developer-terms-of-use/).
 
-#### Bugs or feature requests
-[Open bug tickets](https://github.com/spotify/android-sdk/labels/bug) | [Open feature requests](https://github.com/spotify/android-sdk/labels/enhancement) | [All](https://github.com/spotify/android-sdk/issues) 
+# Bugs or feature requests
+ [Open bug tickets](https://github.com/spotify/android-sdk/labels/bug) | 
+ [Open feature requests](https://github.com/spotify/android-sdk/labels/feature%20request) | [All](https://github.com/spotify/android-sdk/issues) 
+
 
 Beta Release Information
 ========================
@@ -52,10 +54,10 @@ that can subsequently be used to play music or be used in requests to the Spotif
 To add this library to your project copy the `spotify-auth-*.aar` file from the
 [Android SDK repo](https://github.com/spotify/android-sdk) to the `libs`
 folder in your app project and add the reference to its `build.gradle` file.
-For version `beta21-noconnect-2.18c` it would be:
+For version `beta22-noconnect-2.20b` it would be:
 
 ```
-compile 'com.spotify.sdk:spotify-auth-beta21-noconnect-2.18c@aar'
+compile 'com.spotify.sdk:spotify-auth-beta22-noconnect-2.20b@aar'
 ```
 
 To learn more about working with authentication see the
@@ -71,10 +73,10 @@ This library can play music from Spotify after the user logs in with the access 
 To add this library to your project copy the `spotify-player-*.aar` file from the
 [Android SDK](https://github.com/spotify/android-sdk) to the `libs`
 folder in your app project and add the reference to its `build.gradle` file.
-For version `beta21-noconnect-2.18c` it would be:
+For version `beta22-noconnect-2.20b` it would be:
 
 ```
-compile 'com.spotify.sdk:spotify-player-beta21-noconnect-2.18c@aar'
+compile 'com.spotify.sdk:spotify-player-beta22-noconnect-2.20b@aar'
 ```
 
 To learn more about working with the player see the

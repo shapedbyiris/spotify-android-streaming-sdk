@@ -1,3 +1,23 @@
+
+Version beta22-noconnect-2.20b
+====================
+
+**What's new**
+
+* x86_64 and arm64 support
+* Add `contextUri` and `contextName` to `Metadata` class. What is that? If you play a playlist, 
+then `contextUri` is a Spotify URI for the playlist, and `contextName` is a name of the playlist.
+* Add `albumCoverWebUrl` to `Metadata`.
+
+**API changes**
+
+* Most of the methods of `SpotifyPlayer` now expect an `OperationCallback` as the first argument so that you can listen to the 
+the result of the operations like play, skip, pause etc.
+
+**Bug fixes**
+
+* Disk cache works now  
+
 Version beta21-noconnect-2.18c
 ====================
 
@@ -6,12 +26,11 @@ Version beta21-noconnect-2.18c
 * IPv6 network support
 * `Player` renamed to `SpotifyPlayer`
 * `spotifyPlayer.play(uri)` is changed to `spotifyPlayer.play(uri, index_in_context, start_from_ms)`
-* `spotifyPlayer.play(uri, index_in_context, start_from_ms)` supports URIs for tracks, albums, playlists
+* `spotifyPlayer.play(uri, index_in_context, start_from_ms)` supports Spotify URIs for tracks, albums, playlists
 * Error and PlayerEvent classes added with description
 * `Metadata` class added to expose the information about current, next, previous tracks
 * To obtain `Metadata` instance call `spotifyPlayer.getMetadata()`
 * `PlaybackState` class added, get it using `spotifyPlayer.getPlaybackState()`
-
 
 Version 1.0.0-beta13
 ====================
@@ -51,7 +70,6 @@ Version 1.0.0-beta11
 * LoginActivity stays open when fetching authentication code for 2-step Facebook authentication ([Issue #145](https://github.com/spotify/android-sdk/issues/145))
 * `allowBackup=true` was removed from libraries' manifests ([Issue #153](https://github.com/spotify/android-sdk/issues/153))
 
-
 Version 1.0.0-beta10
 ====================
 
@@ -67,7 +85,6 @@ Version 1.0.0-beta10
 * Potentially infinite loop in the Player initialization has been fixed.
 * Internal buffer size has been increased to better accommodate for unstable network connections. ([Issue #98](https://github.com/spotify/android-sdk/issues/102))
 
-
 Version 1.0.0-beta9
 ===================
 
@@ -81,7 +98,7 @@ Version 1.0.0-beta9
   ```java
   // Before 1.0.0-beta9
   compile 'com.spotify.sdk:spotifysdk:1.0.0-beta9@aar'
-
+  
   // From 1.0.0-beta9
   compile 'com.spotify.sdk:spotify-player:1.0.0-beta9@aar'
   compile 'com.spotify.sdk:spotify-auth:1.0.0-beta9@aar'
@@ -104,7 +121,6 @@ Version 1.0.0-beta9
 **Known bugs**
 
 * Unavailable track error currently reports wrong uri.
-
 
 Version 1.0.0-beta8
 ===================
@@ -167,7 +183,7 @@ Version 1.0.0-beta6
   Player player = spotify.getPlayer(context, "mycompany", referenceObj, initObserver);
 
   // New way
-  Spotify spotify = new Spotify();
+  Spotify spotify = new Spotify("myauthtoken");
   Config playerConfig = new Config(context, "myauthtoken", "myclientid");
   Player player = spotify.getPlayer(playerConfig, referenceObj, initObserver);
   ```
@@ -186,7 +202,6 @@ Version 1.0.0-beta6
   playback error triggered.
 * The same issue occurs when trying to play a song with the initial position that is
   beyond its duration.
-
 
 Version 1.0.0-beta5
 ===================
@@ -212,6 +227,7 @@ Version 1.0.0-beta5
 
 * `InitializationObserver#onError` callback is now delivered correctly on the UI thread.
 
+
 Version 1.0.0-beta4
 ===================
 
@@ -236,6 +252,7 @@ Version 1.0.0-beta4
 **Bugs fixed:**
 
 * SDK does not mix playback with Spotify App. ([Issue #28](https://github.com/spotify/android-sdk/issues/28))
+
 
 Version 1.0.0-beta3
 ===================
@@ -266,7 +283,7 @@ Version 1.0.0-beta2
 * getPlaybackPosition returns correct values after seeking position
  ([Issue #7](https://github.com/spotify/android-sdk/issues/7)).
 
-**Known Issues:**
+**Known Issues**
 
 * You can't play albums yet.
 * Switching between playback contexts is buggy.
