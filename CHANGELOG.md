@@ -1,4 +1,13 @@
 
+Version beta23-noconnect-2.20b
+====================
+
+**Fixed issues**
+
+* (How to get current position of track repeatedly?)[https://github.com/spotify/android-sdk/issues/283]
+* (Please include the layout file in the examples folder)[https://github.com/spotify/android-sdk/issues/269]
+
+
 Version beta22-noconnect-2.20b
 ====================
 
