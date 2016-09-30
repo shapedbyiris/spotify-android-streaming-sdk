@@ -78,7 +78,7 @@ public class DemoActivity extends Activity implements
     @SuppressWarnings("SpellCheckingInspection")
     private static final String TEST_SONG_48kHz_URI = "spotify:track:3wxTNS3aqb9RbBLZgJdZgH";
     @SuppressWarnings("SpellCheckingInspection")
-    private static final String TEST_PLAYLIST_URI = "spotify:user:sqook:playlist:0BZvnsfuqmnLyj6WVRuSte";
+    private static final String TEST_PLAYLIST_URI = "spotify:user:spotify:playlist:2yLXxKhhziG2xzy7eyD4TD";
     @SuppressWarnings("SpellCheckingInspection")
     private static final String TEST_ALBUM_URI = "spotify:album:2lYmxilk8cXJlxxXmns1IU";
     @SuppressWarnings("SpellCheckingInspection")
@@ -117,6 +117,7 @@ public class DemoActivity extends Activity implements
             R.id.toggle_shuffle_button,
             R.id.toggle_repeat_button,
     };
+    public static final String TAG = "SpotifySdkDemo";
 
     //  _____ _      _     _
     // |  ___(_) ___| | __| |___
@@ -509,7 +510,7 @@ public class DemoActivity extends Activity implements
      * @param status Status message
      */
     private void logStatus(String status) {
-        Log.i("SpotifySdkDemo", status);
+        Log.i(TAG, status);
         if (!TextUtils.isEmpty(mStatusText.getText())) {
             mStatusText.append("\n");
         }
@@ -562,16 +563,16 @@ public class DemoActivity extends Activity implements
         // Remember kids, always use the English locale when changing case for non-UI strings!
         // Otherwise you'll end up with mysterious errors when running in the Turkish locale.
         // See: http://java.sys-con.com/node/46241
-        logStatus("Player event: " + event);
+        logStatus("Event: " + event);
         mCurrentPlaybackState = mPlayer.getPlaybackState();
         mMetadata = mPlayer.getMetadata();
-        logStatus("Player state: " + mCurrentPlaybackState);
-        logStatus("Metadata: " + mMetadata);
+        Log.i(TAG, "Player state: " + mCurrentPlaybackState);
+        Log.i(TAG, "Metadata: " + mMetadata);
         updateView();
     }
 
     @Override
     public void onPlaybackError(Error error) {
-        logStatus("Player error: " + error);
+        logStatus("Err: " + error);
     }
 }
