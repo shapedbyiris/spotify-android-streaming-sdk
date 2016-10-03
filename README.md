@@ -62,7 +62,7 @@ compile 'com.spotify.sdk:spotify-auth-beta22-noconnect-2.20b@aar'
 
 To learn more about working with authentication see the
 [Authentication Guide](https://developer.spotify.com/technologies/spotify-android-sdk/android-sdk-authentication-guide/)
-and the [API reference](https://developer.spotify.com/android-sdk-docs/authentication) on the developer site.
+and the [API reference](https://spotify.github.io/android-sdk/authentication) on the developer site.
 
 Spotify Player Library
 ----------------------
@@ -81,7 +81,7 @@ compile 'com.spotify.sdk:spotify-player-beta22-noconnect-2.20b@aar'
 
 To learn more about working with the player see the
 [Beginner's Tutorial](https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/)
-and the [API reference](https://developer.spotify.com/android-sdk-docs/player) on the developer site.
+and the [API reference](https://spotify.github.io/android-sdk/player) on the developer site.
 
 Spotify Web API
 ---------------
