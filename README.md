@@ -34,7 +34,7 @@ Getting Started
 ===============
 
 1. Checkout [Spotify Android SDK](https://github.com/spotify/android-sdk) master branch.
-2. Have a look at the [example](examples/DemoActivity.java)
+2. Have a look at the [example](samples/DemoProject/src/main/java/com/spotify/sdk/demo/DemoActivity.java)
 
 
 The SDK's structure
