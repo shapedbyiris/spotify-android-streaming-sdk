@@ -1,3 +1,12 @@
+Version 24-noconnect-2.20b
+====================
+
+**API changes/Fixes**
+
+* `ConnectionStateCallback#onLoginFailed()` takes an Error now, not an int. https://github.com/spotify/android-sdk/issues/300
+* Less meaningless logging is happening now https://github.com/spotify/android-sdk/issues/303
+* PlaybackState and Metadata are updated on every cycle now
+
 
 Version beta23-noconnect-2.20b
 ====================

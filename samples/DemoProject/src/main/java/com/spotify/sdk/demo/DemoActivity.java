@@ -482,7 +482,7 @@ public class DemoActivity extends Activity implements
         updateView();
     }
 
-    public void onLoginFailed(int error) {
+    public void onLoginFailed(Error error) {
         logStatus("Login error "+ error);
     }
 

@@ -1,6 +1,3 @@
-**IMPORTANT! The Spotify Android SDK is currently a beta release; its content
-and functionality are likely to change significantly and without warning.**
-
 Spotify Android SDK
 ===================
 
@@ -12,18 +9,8 @@ Note that by using this SDK, you accept our [Developer Terms of
 Use](https://developer.spotify.com/developer-terms-of-use/).
 
 # Bugs or feature requests
- [Open bug tickets](https://github.com/spotify/android-sdk/labels/bug) | 
- [Open feature requests](https://github.com/spotify/android-sdk/labels/feature%20request) | [All](https://github.com/spotify/android-sdk/issues) 
-
-
-Beta Release Information
-========================
-
-We're releasing this SDK early to gain feedback from the developer community
-about the future of our Android SDK. Please file feedback about missing issues
-or bugs over at our [issue tracker](https://github.com/spotify/android-sdk/issues),
-making sure you search for existing issues and adding your voice to those rather
-than duplicating.
+ [Open bug tickets](https://github.com/spotify/android-sdk/labels/bug) |
+ [Open feature requests](https://github.com/spotify/android-sdk/labels/feature%20request) | [All](https://github.com/spotify/android-sdk/issues)
 
 For known issues and release notes, see the
 [CHANGELOG.md](https://github.com/spotify/android-sdk/blob/master/CHANGELOG.md)
@@ -73,10 +60,10 @@ This library can play music from Spotify after the user logs in with the access 
 To add this library to your project copy the `spotify-player-*.aar` file from the
 [Android SDK](https://github.com/spotify/android-sdk) to the `libs`
 folder in your app project and add the reference to its `build.gradle` file.
-For version `beta22-noconnect-2.20b` it would be:
+For version `24-noconnect-2.20b` it would be:
 
 ```
-compile 'com.spotify.sdk:spotify-player-beta22-noconnect-2.20b@aar'
+compile 'com.spotify.sdk:spotify-player-24-noconnect-2.20b@aar'
 ```
 
 To learn more about working with the player see the

@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    compile 'com.spotify.sdk:spotify-auth-beta23-noconnect-2.20b@aar'
-    compile 'com.spotify.sdk:spotify-player-beta23-noconnect-2.20b@aar'
+    compile 'com.spotify.sdk:spotify-android-auth-1.0.0@aar'
+    compile 'com.spotify.sdk:spotify-player-24-noconnect-2.20b@aar'
 
     compile 'com.android.support:customtabs:23.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
