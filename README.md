@@ -10,14 +10,6 @@ user authentication and authorization.
 Note that by using this SDK, you accept our [Developer Terms of
 Use](https://developer.spotify.com/developer-terms-of-use/).
 
-# Bugs or feature requests
- [Open bug tickets](https://github.com/spotify/android-sdk/labels/bug) |
- [Open feature requests](https://github.com/spotify/android-sdk/labels/feature%20request) | [All](https://github.com/spotify/android-sdk/issues)
-
-For known issues and release notes, see the
-[CHANGELOG.md](https://github.com/spotify/android-sdk/blob/master/CHANGELOG.md)
-file.
-
 
 Beta Release Information
 =======
@@ -27,6 +19,9 @@ about the future of our Android SDKs. Please file feedback about missing issues 
 bugs over at our [issue tracker](https://github.com/spotify/android-sdk/issues),
 making sure you search for existing issues and adding your voice to those
 rather than duplicating.
+
+ [Open bug tickets](https://github.com/spotify/android-sdk/labels/bug) |
+ [Open feature requests](https://github.com/spotify/android-sdk/labels/feature%20request) | [All](https://github.com/spotify/android-sdk/issues)
 
 For known issues and release notes, see the
 [CHANGELOG.md](https://github.com/spotify/android-sdk/blob/master/CHANGELOG.md)
