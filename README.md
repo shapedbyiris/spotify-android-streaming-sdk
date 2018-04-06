@@ -8,7 +8,7 @@ Android applications containing Spotify-related functionality, such as audio str
 user authentication and authorization.
 
 Note that by using this SDK, you accept our [Developer Terms of
-Use](https://developer.spotify.com/developer-terms-of-use/).
+Service](https://beta.developer.spotify.com/terms/).
 
 
 Beta Release Information
@@ -49,15 +49,11 @@ Spotify Authentication Library
 This library is responsible for authenticating the user and fetching the access token
 that can subsequently be used to play music or be used in requests to the Spotify Web API.
 
-To add this library to your project add the reference to its `build.gradle` file:
-
-```gradle
-compile 'com.spotify.android:auth:1.0.0-alpha'
-```
+You can find the Android Auth SDK [here](https://github.com/spotify/android-auth/).
 
 To learn more about working with authentication see the
-[Authentication Guide](https://developer.spotify.com/technologies/spotify-android-sdk/android-sdk-authentication-guide/)
-and the [API reference](https://spotify.github.io/android-sdk/authentication) on the developer site.
+[Authentication Guide](https://beta.developer.spotify.com/documentation/android-sdk/guides/android-authentication/)
+and the [API reference](https://spotify.github.io/android-auth) on Spotify for Developers.
 
 Spotify Player Library
 ----------------------
@@ -75,14 +71,14 @@ compile 'com.spotify.sdk:spotify-player-24-noconnect-2.20b@aar'
 ```
 
 To learn more about working with the player see the
-[Beginner's Tutorial](https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/)
-and the [API reference](https://spotify.github.io/android-sdk/player) on the developer site.
+[Quick Start](https://beta.developer.spotify.com/documentation/android-sdk/quick-start/)
+and the [API reference](https://spotify.github.io/android-sdk/) on Spotify for Developers.
 
 Spotify Web API
 ---------------
 
 The Web API wrapper is currently not a part of the SDK project but there are
-a few open source [Web API libraries](https://developer.spotify.com/web-api/code-examples/#libraries)
+a few open source [Web API libraries](https://beta.developer.spotify.com/documentation/web-api/libraries/)
 available for Android.
 
 
@@ -90,8 +86,7 @@ Authenticating and Scopes
 =========================
 
 You can generate your application's Client ID, Client Secret and define your
-callback URIs at the [My Applications](https://developer.spotify.com/my-applications/)
-section of the Spotify Developer Website.
+callback URIs on your [Spotify for Developers Dashboard](https://beta.developer.spotify.com/dashboard/).
 
 When connecting a user to your app, you *must* provide the scopes your
 application needs to operate. A scope is a permission to access a certain part
@@ -99,9 +94,8 @@ of a user's account, and if you don't ask for the scopes you need you will
 receive "permission denied" errors when trying to perform various tasks.
 
 You do *not* need a scope to access non-user specific information, such as to
-perform searches, look up metadata, etc. A full list of scopes can be found on
-[Scopes](https://developer.spotify.com/web-api/using-scopes/) section of the
-Spotify Developer Website.
+perform searches, look up metadata, etc. A full list of scopes can be found in our 
+[Authorization Scopes Guide](https://beta.developer.spotify.com/documentation/general/guides/scopes/).
 
 If your application's scope needs to change after a user is connected to your app,
 you will need to throw out your stored credentials and re-authenticate the user 
