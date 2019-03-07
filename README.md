@@ -1,7 +1,10 @@
 **WARNING: This is a beta release of the Spotify Android SDK.**
 
-Spotify Android SDK
+Spotify Android Streaming SDK
 ===================
+
+Please see our [new Android SDK](https://github.com/spotify/android-sdk/)
+====
 
 Welcome to Spotify Android SDK. This project is for people who wish to develop
 Android applications containing Spotify-related functionality, such as audio streaming and
