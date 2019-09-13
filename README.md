@@ -1,4 +1,4 @@
-**WARNING: This SDK is deprecated and the repo will be inaccessible from November 1 2019.**
+**WARNING: This SDK is deprecated and the repo will be inaccessible from November 1 2019. More info [here](https://developer.spotify.com/community/news/2019/09/09/streaming-repo-shutdown-date/).**
 
 Spotify Android Streaming SDK
 ===================
