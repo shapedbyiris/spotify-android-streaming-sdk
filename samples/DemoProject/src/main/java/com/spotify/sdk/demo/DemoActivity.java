@@ -350,7 +350,7 @@ public class DemoActivity extends Activity implements
             final String durationStr = String.format(" (%dms)", mMetadata.currentTrack.durationMs);
             mMetadataText.setText(mMetadata.contextName + "\n" + mMetadata.currentTrack.name + " - " + mMetadata.currentTrack.artistName + durationStr);
 
-            Picasso.with(this)
+            Picasso.get()
                     .load(mMetadata.currentTrack.albumCoverWebUrl)
                     .transform(new Transformation() {
                         @Override

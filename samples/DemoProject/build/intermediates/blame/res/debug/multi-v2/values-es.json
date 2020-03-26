@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/andreafiorito/sw_develop/Iris/spotify-android-streaming-sdk/samples/DemoProject/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml",
+            "map": [
+                {
+                    "source": "/Users/andreafiorito/.gradle/caches/transforms-2/files-2.1/7be871c34fd49410d37f5699ed5aae4a/browser-1.2.0/res/values-es/values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,162,263,378",
+                        "endColumns": "106,100,114,103",
+                        "endOffsets": "157,258,373,477"
+                    }
+                },
+                {
+                    "source": "/Users/andreafiorito/.gradle/caches/transforms-2/files-2.1/1cd7eff88f5e86d0249af2958bf465f0/core-1.1.0/res/values-es/values-es.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "482",
+                        "endColumns": "100",
+                        "endOffsets": "578"
+                    }
+                }
+            ]
+        }
+    ]
+}
